@@ -13,11 +13,11 @@ class ScoreResource:
     resources = [
         {
             "resource": "student",
-            "url": 'http://127.0.0.1:5000/get_student_info_json/'
+            "url": 'http://0.0.0.0:5000/get_student_info_json/'
         },
         {
             "resource": "score",
-            "url": 'http://127.0.0.1:5000/get_score_info_json/'
+            "url": 'http://0.0.0.0:5000/get_score_info_json/'
         }
     ]
 
