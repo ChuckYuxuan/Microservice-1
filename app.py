@@ -87,4 +87,4 @@ def get_student_json(id):
 if __name__ == '__main__':
     init_db()
     # mock_data()
-    app.run()
+    app.run(host='0.0.0.0', port=5000)
