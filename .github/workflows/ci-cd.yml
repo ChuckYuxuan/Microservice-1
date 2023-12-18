@@ -11,10 +11,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3  # Updated to the latest version
 
     - name: Set up Python
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@v4  # Updated to the latest version
       with:
         python-version: '3.8'
 
@@ -34,12 +34,12 @@ jobs:
   deploy:
     needs: build-and-test
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    if: github.ref == 'refs/heads/master' && github.event_name == 'push'  # Corrected to 'master'
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3  # Updated to the latest version
 
     - name: Set up Python
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@v4  # Updated to the latest version
       with:
         python-version: '3.8'
 
