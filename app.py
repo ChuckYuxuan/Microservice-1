@@ -90,6 +90,14 @@ app.add_url_rule('/api/dashboard/graphql_search_student', view_func=GraphQLView.
     graphiql=True,
 ))
 
+# query example, where id is "student_id"
+# {
+#   avgscores(id: "3") {
+#     id
+#     avgscore
+#   }
+# }
+
 if __name__ == '__main__':
     init_db()
     mock_data()
