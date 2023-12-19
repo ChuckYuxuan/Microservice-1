@@ -44,6 +44,7 @@ def get_score_info(id):
     close_conn(conn)
     time.sleep(0.05)
     return jsonify({'score': score})
+    random.randint(1,2)
 
 
 @app.route('/get_student_info_json/<id>')
