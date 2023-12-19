@@ -61,6 +61,7 @@ def add_score():
     score = request.json.get('score')
 
     conn = get_db_conn()
+    conn.execute(f"INSERT INTO students VALUES ({student_id}, '{student_name}')")
     conn.execute(f"INSERT INTO scores VALUES ({student_id}, '{student_name}', {course_id}, '{course_name}', {score})")
     close_conn(conn)
 
