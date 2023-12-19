@@ -92,5 +92,5 @@ app.add_url_rule('/api/dashboard/graphql_search_student', view_func=GraphQLView.
 
 if __name__ == '__main__':
     init_db()
-    # mock_data()
+    mock_data()
     app.run(host='0.0.0.0', port=5000)

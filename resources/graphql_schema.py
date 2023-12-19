@@ -19,8 +19,4 @@ class Query(graphene.ObjectType):
         result = conn.execute(query).fetchdf()
         return [AvgscoreType(**row) for index, row in result.iterrows()]
 
-conn = get_db_conn()
-conn.execute('CREATE OR REPLACE VIEW avgscores AS SELECT student_id as id, avg(score) as avgscore FROM scores GROUP BY student_id')
-conn.close()
-
 schema = graphene.Schema(query=Query)
