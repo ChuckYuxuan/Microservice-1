@@ -1,3 +1,5 @@
+import time
+
 from flask import Flask, render_template, request, jsonify, redirect
 from flask_graphql import GraphQLView
 
@@ -40,6 +42,7 @@ def get_score_info(id):
     result = conn.execute(f"SELECT * FROM scores WHERE student_id = {id}")
     score = result.fetchall()
     close_conn(conn)
+    time.sleep(0.05)
     return jsonify({'score': score})
 
 
@@ -49,6 +52,7 @@ def get_student_json(id):
     result = conn.execute(f"SELECT * FROM students WHERE student_id = '{id}'")
     student = result.fetchone()
     close_conn(conn)
+    time.sleep(0.05)
     return jsonify({'student': student})
 
 
