@@ -21,16 +21,6 @@ jobs:
     - name: Install dependencies
       run: pip install -r requirements.txt
 
-    # Removed Flake8 Linting
-    # - name: Lint with Flake8
-    #   run: |
-    #     pip install flake8
-    #     flake8 .
-
-    # Uncomment the following lines if you have tests
-    # - name: Run tests
-    #   run: |
-    #     # Add commands to run your tests here
 
   deploy:
     needs: build-and-test
